@@ -19,13 +19,15 @@ def Lista_tareas():
 
 def Nueva_tarea():
     
+    
     titulo = input("Introduce el titulo de la tarea: ")
     descripcion = input("Introduce descripcion de la tarea: ")
     estado = input("Introduce el estado de la tarea: ")
     responsable = input("Introduce el nombre del responsable: ")
     fecha_creacion = input("Introduce la fecha de hoy: ")
-    
-    nueva_tarea = Tareas(titulo, descripcion, estado, responsable, fecha_creacion)
+    usuario_nombre = input("Introduce el usuario")
+
+    nueva_tarea = Tareas(titulo, descripcion, estado, responsable, fecha_creacion, usuario_nombre)
     db.session.add(nueva_tarea)
     db.session.commit()
 

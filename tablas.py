@@ -1,26 +1,21 @@
 import db
-from sqlalchemy import create_engine, Column, String, Integer
+from sqlalchemy import create_engine, Column, String, Integer, ForeignKey
+from sqlalchemy.orm import relationship
 
-class Tareas(db.Base):
-    __tablename__ = "tareas"
 
-    id = Column(Integer, primary_key=True,)
-    titulo = Column(String(60))
-    descripcion =Column(String(500))
-    estado =Column(String(30))
-    responsable =Column(String(30))
-    fecha_creacion =Column(String(20))
+class Usuarios(db.Base):
+    __tablename__= "usuarios"
 
-    def __init__(self, titulo, descripcion, estado, responsable, fecha_creacion):
-        self.titulo = titulo
-        self.descripcion = descripcion
-        self.estado = estado
-        self.responsable = responsable
-        self.fecha_creacion = fecha_creacion
-
-    def __repr__(self):
-        return f'"ID: "{self.id}, {self.descripcion}, {self.estado}, {self.responsable}, {self.fecha_creacion}\n'
-
+    id = Column(Integer, primary_key=True)
+    nombre = Column(String(50))
+    apellidos =Column(String(60))
+    email = Column(String(50))
+    usuarios = relationship("Tareas")
+    
+    def __init__(self, nombre, apellidos, email):
+        self.nombre = nombre
+        self.apellidos = apellidos
+        self.email = email
 
 db.Base.metadata.create_all(db.engine)
 
@@ -43,21 +38,32 @@ class Estados(db.Base):
 db.Base.metadata.create_all(db.engine)        
 
 
-class Usuarios(db.Base):
-    __tablename__= "usuarios"
+class Tareas(db.Base):
+    __tablename__ = "tareas"
 
-    id = Column(Integer, primary_key=True)
-    nombre = Column(String(50))
-    apellidos =Column(String(60))
-    email = Column(String(50))
-    
-    
-    def __init__(self, nombre, apellidos, email):
-        self.nombre = nombre
-        self.apellidos = apellidos
-        self.email = email
+    id = Column(Integer, primary_key=True,)
+    titulo = Column(String(60))
+    descripcion =Column(String(500))
+    estado =Column(String(30))
+    responsable =Column(String(30))
+    fecha_creacion =Column(String(20))
+    usuarios_nombre =Column(String(40), ForeignKey("usuarios.nombre"))
+   
+   
+    def __init__(self, titulo, descripcion, estado, responsable, fecha_creacion, usuarios_nombre):
+        self.titulo = titulo
+        self.descripcion = descripcion
+        self.estado = estado
+        self.responsable = responsable
+        self.fecha_creacion = fecha_creacion
+        self.usuarios_nombre = usuarios_nombre
+
+    def __repr__(self):
+        return f'"ID: "{self.id}, {self.descripcion}, {self.estado}, {self.responsable}, {self.fecha_creacion}, {self.usuarios_nombre}\n'
+
 
 db.Base.metadata.create_all(db.engine)
+
 
 
 class Login(db.Base):
