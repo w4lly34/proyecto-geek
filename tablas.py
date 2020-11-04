@@ -10,7 +10,7 @@ class Usuarios(db.Base):
     nombre = Column(String(50))
     apellidos =Column(String(60))
     email = Column(String(50))
-    usuarios = relationship("Tareas")
+    usuarios = relationship("Tareas", uselist = False)
     
     def __init__(self, nombre, apellidos, email):
         self.nombre = nombre
@@ -44,24 +44,25 @@ class Tareas(db.Base):
 
     id = Column(Integer, primary_key=True,)
     titulo = Column(String(60))
-    descripcion =Column(String(500))
-    responsable =Column(String(30))
+    descripcion =Column(String(500))   
+    responsable =Column(String(50))
     fecha_creacion =Column(String(20))
     usuarios_nombre =Column(String(40), ForeignKey("usuarios.nombre"))
     estado_nombre =Column(String(30), ForeignKey("estados.nombre"))
 
    
    
-    def __init__(self, titulo, descripcion, estado, responsable, fecha_creacion, usuarios_nombre):
+    def __init__(self, titulo, descripcion, responsable, fecha_creacion, usuarios_nombre, estado_nombre):
         self.titulo = titulo
         self.descripcion = descripcion
-        self.estado = estado
         self.responsable = responsable
         self.fecha_creacion = fecha_creacion
         self.usuarios_nombre = usuarios_nombre
+        self.estado_nombre = estado_nombre
+
 
     def __repr__(self):
-        return f'"ID: "{self.id}, {self.descripcion}, {self.estado}, {self.responsable}, {self.fecha_creacion}, {self.usuarios_nombre}\n'
+        return f'"ID: "{self.id}, {self.descripcion}, {self.responsable}, {self.fecha_creacion}, {self.usuarios_nombre}, {self.estado_nombre}\n'
 
 
 db.Base.metadata.create_all(db.engine)

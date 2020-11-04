@@ -3,25 +3,57 @@ import db
 
 
 def Menu_de_opciones():
+    
     print("       ---------       ")
     print("       - MENU -       ")
     print("       ---------       \n")
     print("   [1]Lista de tareas: ")
-    print("   [2]Nueva tarea: ")
-    print("   [3]Cambio estado: ")
-    print("   [4]Editar tarea: ")
-    print("   [5]Borrar tarea: ")
-    print("   [6]Buscar usuario: ")
-    print("   [7]Crear usuario y contraseña: ")
+    print("   [2]Menu Tareas: ") 
+    print("   [3]Menu Usario: ")
+    print("   [4]Menu Estado: ")
+    print("   [5]Menu Login: ")
     print("   [S]Salir: \n")
 
-def Menu_editar():
+def Menu_tareas():
     
     print("       -----------       ")
-    print("     - MENU EDITAR -       ")
+    print("     - MENU TAREAS -       ")
     print("       -----------       \n")
-    print("   [1]Editar titulo: ")
-    print("   [2]Editar descripcion: ")
-    print("   [3]Editar estado: ")
+    print("   [1]Nueva tarea: ")
+    print("   [2]Editar titulo: ")
+    print("   [3]Editar descripcion: ") 
     print("   [4]Editar responsable: ")
     print("   [5]Editar fecha de creacion: ")
+
+
+def Menu_usuario():
+
+    print("       ------------       ")
+    print("     - MENU USUARIO -       ")
+    print("       ------------       \n")
+    print("   [1]Nuevo usuario: ")
+    print("   [2]Editar nombre: ")
+    print("   [3]Editar apellidos: ") 
+    print("   [4]Editar email: ")  
+
+
+def Menu_estado():
+
+    print("       -----------       ")
+    print("     - MENU ESTADO -       ")
+    print("       -----------      \n")
+    print("   [1]Nuevo estado: ")
+    print("   [2]Editar nombre: ")
+    print("   [3]Editar descripcion: ") 
+
+
+def Menu_login():
+
+    print("       ----------      ")
+    print("     - MENU LOGIN -       ")
+    print("       ----------      \n")
+    print("   [1]Nuevo usuario: ")   
+    print("   [2]Editar usuario: ")
+    print("   [3]Editar contraseña: ") 
+
+

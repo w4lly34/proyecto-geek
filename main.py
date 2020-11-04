@@ -2,7 +2,7 @@
 import db
 from fun_tareas import  Nueva_tarea, Lista_tareas, Borrar_tarea, Editar_tarea_titulo, Editar_tarea_descripcion, Editar_tarea_responsable, Editar_tarea_estado, Editar_fecha_creacion
 from fun_login import Crear_login , Login_agenda
-from fun_menus import Menu_de_opciones,  Menu_editar
+from fun_menus import Menu_de_opciones,  Menu_tareas, Menu_usuario, Menu_estado, Menu_login
 from tablas import Tareas, Estados, Usuarios, Login
 from colorama import init , Fore, Style
 
@@ -20,50 +20,52 @@ while salir:
     if opciones == "1":
         Lista_tareas()
 
-    #[2]Nueva tarea:   
+      
+    #[2]Menu tareas
     elif opciones == "2":
-        Nueva_tarea()
-        print("funciona")
-     
-    
-    #[4]Editar tarea
-    elif opciones == "4":
-        Menu_editar()
+        Menu_tareas()
         opciones_editar = input("Elige una opcion: ")
         
+        
+        #Editar titulo
         if opciones_editar == "1":
+            Nueva_tarea()
+        
+        
+        #Editar titulo
+        if opciones_editar == "2":
             Editar_tarea_titulo()
         
-        elif opciones_editar == "2":
-            Editar_tarea_descripcion()
-        
+        #Editar descripcion
         elif opciones_editar == "3":
-            Editar_tarea_estado()
-        
+            Editar_tarea_descripcion()
+       
+        #Editar responsable
         elif opciones_editar == "4":
             Editar_tarea_responsable()
         
+        #Editar fecha
         elif opciones_editar == "5":
             Editar_fecha_creacion()
 
         else:
             print("ELECCION INCORRECTA")
 
-        
-            
+  
     
-    #[5]Borrar tarea
+    #[3]Menu usuario
+    elif opciones == "3":
+        Menu_usuario()
+        print("funciona")
+    
+    #[4]Menu estados
+    elif opciones == "4":
+        Menu_estado()
+        print("funciona")
+    
+    #[5]Menu login
     elif opciones == "5":
-        Borrar_tarea()
-        print("funciona")
-    
-    #[6]Buscar usuario
-    elif opciones == "6":
-        print("funciona")
-    
-    #[7]Crear usuario y contraseña
-    elif opciones == "7":
-        Crear_login()
+        Menu_login()
         print("funciona")
     
     #[S]Salir
