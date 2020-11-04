@@ -26,6 +26,7 @@ class Estados(db.Base):
     id = Column(Integer, primary_key=True)
     nombre = Column(String(50))
     descripcion =Column(String(500))
+    estado = relationship("Tareas")
 
     def __init__(self, nombre, descripcion):
         self.nommbre = nombre
@@ -44,10 +45,11 @@ class Tareas(db.Base):
     id = Column(Integer, primary_key=True,)
     titulo = Column(String(60))
     descripcion =Column(String(500))
-    estado =Column(String(30))
     responsable =Column(String(30))
     fecha_creacion =Column(String(20))
     usuarios_nombre =Column(String(40), ForeignKey("usuarios.nombre"))
+    estado_nombre =Column(String(30), ForeignKey("estados.nombre"))
+
    
    
     def __init__(self, titulo, descripcion, estado, responsable, fecha_creacion, usuarios_nombre):

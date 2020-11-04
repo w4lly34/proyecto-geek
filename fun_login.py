@@ -28,3 +28,17 @@ def Login_agenda():
     while usuario != usuario1 or contraseña != contraseña1:
         usuario = input("Introduce usuario: ")
         contraseña = input("Introduce contraseña: ")
+
+
+###option1
+    '''login = db.session.query(Login).get(1)
+    while None != login and (usuario != login.usuario or login.contraseña != contraseña):
+        usuario = input("Introduce usuario: ")         
+        contraseña = input("Introduce contraseña: ")'''
+
+
+###option2   
+'''login = db.session.query(Login).filter_by(id="1")     
+    while 0 < len(login) and (login[0].usuario != or login[0].contraseña != contraseña):        
+        usuario = input("Introduce usuario: ")         
+        contraseña = input("Introduce contraseña: ")'''    
