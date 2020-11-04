@@ -47,7 +47,7 @@ def Buscar_usario_nombre():
 
 def Lista_usuarios():
 
-    print("\n----LISTA DE TAREAS----")
+    print("\n----LISTA DE USUARIOS----")
     usuarios = db.session.query(Usuarios).all()
     
     for usuario in usuarios:
@@ -56,4 +56,4 @@ def Lista_usuarios():
 
     
     
-Lista_usuarios()
+

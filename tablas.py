@@ -29,7 +29,7 @@ class Estados(db.Base):
     estado = relationship("Tareas")
 
     def __init__(self, nombre, descripcion):
-        self.nommbre = nombre
+        self.nombre = nombre
         self.descripcion = descripcion
 
     def __repr__(self):
