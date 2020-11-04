@@ -14,7 +14,7 @@ def Lista_tareas():
     tareas = db.session.query(Tareas).all()
     
     for tarea in tareas:
-        print(Fore.RED+"\nID:"+Fore.RESET, tarea.id,Fore.RED+"TAREAS:"+Fore.RESET, tarea.titulo, Fore.RED+"DESCRIPCION:"+Fore.RESET, tarea.descripcion, Fore.RED+"ESTADO:"+Fore.RESET, tarea.estado, Fore.RED+"RESPONSABLE:"+Fore.RESET, tarea.responsable, Fore.RED+"FECHA:"+Fore.RESET, tarea.fecha_creacion)
+        print(Fore.RED+"\nID:"+Fore.RESET, tarea.id,Fore.RED+"TAREAS:"+Fore.RESET, tarea.titulo, Fore.RED+"DESCRIPCION:"+Fore.RESET, tarea.descripcion, Fore.RED+"ESTADO:"+Fore.RESET, tarea.responsable, Fore.RED+"FECHA:"+Fore.RESET, tarea.fecha_creacion, Fore.RED+"USUARIO:"+Fore.RESET, tarea.usuarios_nombre, Fore.RED+"ESTADO:"+Fore.RESET, tarea.estado_nombre)
 
 
 def Nueva_tarea():

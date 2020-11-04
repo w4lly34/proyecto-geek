@@ -31,7 +31,6 @@ while salir:
         if opciones_editar == "1":
             Nueva_tarea()
         
-        
         #Editar titulo
         if opciones_editar == "2":
             Editar_tarea_titulo()
