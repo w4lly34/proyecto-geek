@@ -9,7 +9,7 @@ def Menu_de_opciones():
     print("       ---------       \n")
     print("   [1]Lista de tareas: ")
     print("   [2]Menu Tareas: ") 
-    print("   [3]Menu Usario: ")
+    print("   [3]Menu Usuario: ")
     print("   [4]Menu Estado: ")
     print("   [5]Menu Login: ")
     print("   [S]Salir: \n")
@@ -35,6 +35,8 @@ def Menu_usuario():
     print("   [2]Editar nombre: ")
     print("   [3]Editar apellidos: ") 
     print("   [4]Editar email: ")  
+    print("   [5]Buscar usuario por nombre: ")
+    print("   [6]Lista usarios: ")
 
 
 def Menu_estado():
