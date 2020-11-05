@@ -1,15 +1,15 @@
 #PROYECTO: LISTA DE TAREAS CLI CON PYTHON + SQLALCHEMY
 import db
 from fun_tareas import  Nueva_tarea, Lista_tareas, Borrar_tarea, Editar_tarea_titulo, Editar_tarea_descripcion, Editar_tarea_responsable, Editar_tarea_estado, Editar_fecha_creacion
-from fun_login import Crear_login , Login_agenda
-from fun_usuarios import Nuevo_usuario, Editar_nombre_usuario,Editar_apellidos_usuario, Editar_email_usuario, Lista_usuarios
+from fun_login import Crear_login, Login_agenda, Editar_usuario, Editar_contraseña
+from fun_usuarios import Nuevo_usuario, Editar_nombre_usuario,Editar_apellidos_usuario, Editar_email_usuario, Lista_usuarios, Buscar_usario_nombre
 from fun_estados import Nuevo_estado, Editar_nombre_estado, Editar_descripcion_estado
 from fun_menus import Menu_de_opciones,  Menu_tareas, Menu_usuario, Menu_estado, Menu_login
 from tablas import Tareas, Estados, Usuarios, Login
 from colorama import init , Fore, Style
 
 
-#Login_agenda()
+Login_agenda()
 
 salir = True
  
@@ -34,7 +34,7 @@ while salir:
             Nueva_tarea()
         
         #Editar titulo
-        if opciones_editar == "2":
+        elif opciones_editar == "2":
             Editar_tarea_titulo()
         
         #Editar descripcion
@@ -48,7 +48,7 @@ while salir:
         #Editar fecha
         elif opciones_editar == "5":
             Editar_fecha_creacion()
-
+    
         else:
             print("ELECCION INCORRECTA")
 
@@ -77,13 +77,12 @@ while salir:
         
         #Buscar usuario por nombre
         elif opciones == "5":
-            pass
+            Buscar_usario_nombre()
         
         #Lista de usuarios
         elif opciones == "6":
             Lista_usuarios()
-
-        
+   
         else:
             print("ELECCION INCORRECTA")    
 
@@ -109,10 +108,24 @@ while salir:
         else:
             print("ELECCION INCORRECTA")                
     
+#----------LOGIN----------------
+    
     #[5]Menu login
     elif opciones == "5":
         Menu_login()
-        print("funciona")
+        opciones = input("Elige una opcion: ")
+        
+        #Crear login
+        if opciones == "1":
+            Crear_login()
+        
+        #Editar usuario
+        elif opciones == "2":
+            Editar_usuario()
+        
+        #Editar contraseña
+        elif opciones == "3":
+            Editar_contraseña()
     
     #[S]Salir
     elif opciones == "S":

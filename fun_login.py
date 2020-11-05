@@ -1,7 +1,6 @@
-
 import db
 from tablas import Login
-from sqlalchemy import create_engine, Column, String, Integer
+
 
 
 def Crear_login():
@@ -14,31 +13,72 @@ def Crear_login():
     db.session.commit()
 
 
-def Login_agenda():
+def Editar_usuario():
+   
+    usuario_antiguo = input("Escribe el usuario a cambiar: ")
+    usuario_editar = input("Escribe el nuevo usuario: ")
+
+    nombre = db.session.query(Login).filter(Login.usuario==usuario_antiguo).first()
+    nombre.usuario = usuario_editar
+
+    db.session.commit()
+
+
+def Editar_contraseña():
     
-    usuario = input("Introduce usuario: ")
-    contraseña = input("Introduce contraseña: ")
+    contraseña_antiguo = input("Escribe el contraseña a cambiar: ")
+    contraseña_editar = input("Escribe el contraseña usuario: ")
 
-    login = db.session.query(Login).filter_by(id="1")
+    nombre = db.session.query(Login).filter(Login.contraseña==contraseña_antiguo).first()
+    nombre.contraseña = contraseña_editar
 
-    for row in login:
-        usuario1 = row.usuario
-        contraseña1 = row.contraseña
-
-    while usuario != usuario1 or contraseña != contraseña1:
-        usuario = input("Introduce usuario: ")
-        contraseña = input("Introduce contraseña: ")
+    db.session.commit()
 
 
-###option1
-    '''login = db.session.query(Login).get(1)
-    while None != login and (usuario != login.usuario or login.contraseña != contraseña):
-        usuario = input("Introduce usuario: ")         
-        contraseña = input("Introduce contraseña: ")'''
+
+def Login_agenda():
+   
+    salir=True
+    while salir:
+         
+        try:
+            nick = input("Introduce usuario: ")
+            nick1 = db.session.query(Login).filter_by(usuario=nick).first()
+            nickr = nick1.usuario
+            print("correcto")
+            salir=False
+        except:
+            print("Incorrecto")
+
+    salir=True
+    while salir:    
+        
+        try:
+            passw = input("Introduce contraseña: ")
+            passw1 = db.session.query(Login).filter_by(contraseña=passw).first()
+            passwr = passw1.contraseña
+            print("correcto")
+            salir=False
+        except:
+            print("Incorrecto")
+            
+            
 
 
-###option2   
-'''login = db.session.query(Login).filter_by(id="1")     
-    while 0 < len(login) and (login[0].usuario != or login[0].contraseña != contraseña):        
-        usuario = input("Introduce usuario: ")         
-        contraseña = input("Introduce contraseña: ")'''    
+
+
+
+    
+
+       
+
+      
+    
+
+
+    
+    
+    
+    
+
+    

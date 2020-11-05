@@ -1,6 +1,5 @@
 import db
-from tablas import Tareas, Estados, Usuarios
-from sqlalchemy import create_engine, Column, String, Integer
+from tablas import Usuarios
 from colorama import init , Fore, Style
 
 
@@ -43,7 +42,9 @@ def Editar_email_usuario():
 
 def Buscar_usario_nombre():
     nombre_buscar= input("Escribe el nombre del usuario: ")
-    usuario = db.session.query(Usuarios).filter(Usuarios.nombre == nombre_buscar).all
+    
+    for i in db.session.query(Usuarios).filter(Usuarios.nombre==nombre_buscar).all():
+        print(Fore.RED+"\nNOMBRE:"+Fore.RESET,i.nombre, Fore.RED+"\nAPELLISDOS:"+Fore.RESET, i.apellidos,Fore.RED+"\nEMAIL:"+Fore.RESET, i.email)
 
 def Lista_usuarios():
 
@@ -54,6 +55,5 @@ def Lista_usuarios():
         print(Fore.RED+"\nID:"+Fore.RESET, usuario.id,Fore.RED+"NOMBRE:"+Fore.RESET, usuario.nombre, Fore.RED+"APELLIDOS:"+Fore.RESET, usuario.apellidos, Fore.RED+"EMAIL:"+Fore.RESET, usuario.email)
 
 
-    
-    
+
 

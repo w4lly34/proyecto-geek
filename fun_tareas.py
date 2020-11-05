@@ -1,7 +1,6 @@
 
 import db
-from tablas import Tareas, Estados, Usuarios
-from sqlalchemy import create_engine, Column, String, Integer, inspect
+from tablas import Tareas
 from colorama import init , Fore, Style
 
 
@@ -89,11 +88,9 @@ def Borrar_tarea():
     borrar_tarea = db.session.query(Tareas).filter_by(titulo=tarea_borrar).first()
     db.session.delete(borrar_tarea)
     db.session.commit()
-    print("----Tarea BORRADA----")
+    
 
 
-def Buscar_tarea():
-    pass
 
 
 

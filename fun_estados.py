@@ -1,7 +1,7 @@
 import db
-from tablas import Tareas, Estados, Usuarios
-from sqlalchemy import create_engine, Column, String, Integer
-from colorama import init , Fore, Style
+from tablas import Estados
+
+
 
 
 
