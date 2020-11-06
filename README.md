@@ -12,5 +12,8 @@ $ pip install -r requirements.txt
 ```
 ## Autores ✒️
 
+* **Daniel Noguera Heredia** - *Trabajo Inicial* - [w4lly34](https://github.com/w4lly34)
 
-* **Daniel Noguera** - *Trabajo Inicial* - [w4lly34](https://github.com/w4lly34)
+## Licencia 📄
+
+Este proyecto está bajo la Licencia (MIT License) - mira el archivo [LICENSE.md](LICENSE.md) para detalles
