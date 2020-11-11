@@ -18,7 +18,6 @@ def Lista_tareas():
 
 def Nueva_tarea():
     
-
     titulo = input("Introduce el titulo de la tarea: ")
     descripcion = input("Introduce descripcion de la tarea: ")
     responsable = input("Introduce el nombre del responsable: ")

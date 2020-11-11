@@ -1,6 +1,13 @@
 import db
 
 
+def Menu_login1():
+
+    print("       ---------       ")
+    print("       - LOGIN -       ")
+    print("       ---------       \n")
+
+
 
 def Menu_de_opciones():
     
@@ -57,5 +64,6 @@ def Menu_login():
     print("   [1]Nuevo usuario: ")   
     print("   [2]Editar usuario: ")
     print("   [3]Editar contraseña: ") 
+
 
 

@@ -4,11 +4,11 @@ from fun_tareas import  Nueva_tarea, Lista_tareas, Borrar_tarea, Editar_tarea_ti
 from fun_login import Crear_login, Login_agenda, Editar_usuario, Editar_contraseña
 from fun_usuarios import Nuevo_usuario, Editar_nombre_usuario,Editar_apellidos_usuario, Editar_email_usuario, Lista_usuarios, Buscar_usario_nombre
 from fun_estados import Nuevo_estado, Editar_nombre_estado, Editar_descripcion_estado
-from fun_menus import Menu_de_opciones,  Menu_tareas, Menu_usuario, Menu_estado, Menu_login
+from fun_menus import Menu_de_opciones,  Menu_tareas, Menu_usuario, Menu_estado, Menu_login1
 from tablas import Tareas, Estados, Usuarios, Login
 from colorama import init , Fore, Style
 
-
+Menu_login1()
 Login_agenda()
 
 salir = True
